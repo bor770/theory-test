@@ -1,0 +1,124 @@
+html {
+  --color-boston-university-red-50: #fee8e7;
+  --color-boston-university-red-100: #ffc9ba;
+  --color-boston-university-red-200: #ffa58e;
+  --color-boston-university-red-300: #ff7f61;
+  --color-boston-university-red-400: #ff5f3e;
+  --color-boston-university-red-500: #ff3a1c;
+  --color-boston-university-red-600: #ff3318;
+  --color-boston-university-red-700: #f52b12;
+  --color-boston-university-red-800: #e7200d;
+  --color-boston-university-red-900: #cf0000;
+
+  --color-raisin-black-50: #fafafa;
+  --color-raisin-black-100: #f5f5f5;
+  --color-raisin-black-200: #efefef;
+  --color-raisin-black-300: #e1e1e1;
+  --color-raisin-black-400: #bebebe;
+  --color-raisin-black-500: #9f9f9f;
+  --color-raisin-black-600: #767676;
+  --color-raisin-black-700: #626262;
+  --color-raisin-black-800: #434343;
+  --color-raisin-black-900: #222222;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+#test-app {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+aside {
+  align-items: center;
+  display: flex;
+  height: 25vh;
+}
+
+.wrong {
+  background-color: var(--color-boston-university-red-900);
+  color: #fff;
+  display: inline-block;
+  padding: 1rem;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-block: auto;
+  text-align: center;
+  width: 50vw;
+}
+
+h1 {
+  align-items: center;
+  background-color: var(--color-raisin-black-200);
+  color: var(--color-raisin-black-900);
+  display: flex;
+  font-size: 1rem;
+  height: 2rem;
+  justify-content: center;
+  min-width: max-content;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  gap: 0.2rem;
+  list-style: none;
+  padding: 0;
+  text-align: right;
+  width: 100%;
+}
+
+li {
+  align-items: center;
+  background-color: var(--color-raisin-black-100);
+  cursor: pointer;
+  display: flex;
+  height: 1.9rem;
+  padding-right: 2rem;
+}
+
+li:hover {
+  background-color: var(--color-raisin-black-200);
+}
+
+#answers {
+  align-self: normal;
+  display: flex;
+  position: relative;
+}
+
+img {
+  flex-shrink: 0;
+  height: 8rem;
+  margin-block: 0.9rem;
+  object-fit: contain;
+  width: 25vw;
+}
+
+/* button {
+  border: none;
+  color: var(--color-raisin-black-900);
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 3rem;
+  width: 9rem;
+}
+
+button:hover {
+  background-color: var(--color-raisin-black-500);
+  color: #fff;
+} */

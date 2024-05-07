@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="styles/base.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script defer src="scripts/app.js"></script>
+  </head>
+  <body>
+    <main id="test-app">
+      <aside>
+        <span v-if="wrongAnswer" class="wrong">טעות!</span>
+      </aside>
+      <form v-if="!selectedCategory">
+        <h1>בחר נושא</h1>
+        <ul>
+          <li
+            v-for="category in categories"
+            @click="onCategorySelected(category)"
+          >
+            {{ category }}
+          </li>
+        </ul>
+      </form>
+      <form v-else>
+        <h1>
+          {{ currentQuestion.question }} ({{ questionIndex }} מתוך {{
+          totalQuestionsInCategory }})
+        </h1>
+        <div id="answers">
+          <ul>
+            <li
+              v-for="answer in currentQuestion.suggestedAnswers"
+              @click="onAnswerSelected(answer)"
+            >
+              {{ answer }}
+            </li>
+          </ul>
+          <img
+            v-if="currentQuestion.imgPath"
+            alt="Question Image"
+            v-bind:src="currentQuestion.imgPath"
+          />
+        </div>
+      </form>
+      <aside>
+        <span v-if="totalWrongAnswers" class="wrong"
+          >{{ totalWrongAnswers }}</span
+        >
+      </aside>
+    </main>
+  </body>
+</html>
