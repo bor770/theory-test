@@ -12,14 +12,19 @@ const shuffle = (array) => {
 
 const TestApp = {
   async created() {
-    const test = await (await fetch(`test.json`)).json();
+    const test = await (await fetch(`data/test.json`)).json();
 
     const categories = [...new Set(test.map((question) => question.category))];
     this.categories = categories;
 
     categories.forEach((category) => {
       this.test[category] = shuffle(
-        test.filter((question) => question.category === category)
+        test
+          .filter((question) => question.category === category)
+          .map((quest) => ({
+            ...quest,
+            question: quest.question.slice(6),
+          }))
       );
     });
   },
@@ -39,9 +44,9 @@ const TestApp = {
   },
   methods: {
     nextQuestion() {
-      this.questionIndex++;
+      if (this.questionIndex < this.totalQuestionsInCategory) {
+        this.questionIndex++;
 
-      if (this.questionIndex <= this.totalQuestionsInCategory) {
         const question = this.test[this.selectedCategory].shift();
 
         this.correctAnswer =
